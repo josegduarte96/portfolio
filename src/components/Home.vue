@@ -1,24 +1,12 @@
 <template>
-  <div
-    :class="{ 'bg-white': !nightMode, 'bg-dark': nightMode }"
-    class="pt-5 p-st"
-  >
-    <div
-      class="container"
-      data-aos="fade"
-      data-aos-once="true"
-      data-aos-duration="1000"
-    >
+  <div :class="{ 'bg-light': !nightMode, 'bg-dark': nightMode }" class="pt-5 p-st">
+    <div class="container" data-aos="fade" data-aos-once="true" data-aos-duration="1000">
       <div class="row align-items-center">
         <div class="col-xl-6 col-bg-6 col-md-6 col-sm-12 text-center">
           <img :src="picture" />
         </div>
         <div class="col-xl-6 col-bg-6 col-md-6 col-sm-12 pt-5">
-          <span
-            class="home-title"
-            :class="{ pgray: !nightMode, 'text-light': nightMode }"
-            >Jose Duarte</span
-          >
+          <span class="home-title" :class="{ pgray: !nightMode, 'text-light': nightMode }">Jose Duarte</span>
           <div>
             <p v-html="description"></p>
           </div>
@@ -52,9 +40,9 @@
 </template>
 
 <script>
-import info from "../../info";
+import info from "../../info"
 
-import Wave from "./helpers/Wave";
+import Wave from "./helpers/Wave"
 
 export default {
   name: "Home",
@@ -73,25 +61,25 @@ export default {
       name: info.name,
       linkedin: info.links.linkedin,
       github: info.links.github,
-      resume: info.links.resume
-    };
+      resume: info.links.resume,
+    }
   },
   methods: {
     open(link) {
       switch (link) {
         case "linkedin":
-          window.open(this.linkedin, "_blank");
-          break;
+          window.open(this.linkedin, "_blank")
+          break
         case "github":
-          window.open(this.github, "_blank");
-          break;
+          window.open(this.github, "_blank")
+          break
         case "resume":
-          window.open(this.resume, "_blank");
-          break;
+          window.open(this.resume, "_blank")
+          break
       }
     },
   },
-};
+}
 </script>
 
 <style scoped>
@@ -124,19 +112,19 @@ img {
 }
 
 .btn {
-  border-color: #759CC9;
-  color: #759CC9;
+  border-color: #759cc9;
+  color: #759cc9;
 }
 
 .btn:hover {
-  background-color: #759CC9;
-  border-color: #759CC9;
+  background-color: #759cc9;
+  border-color: #759cc9;
   color: white;
 }
 
 .btn:focus {
-  background-color: #759CC9;
-  border-color: #759CC9;
+  background-color: #759cc9;
+  border-color: #759cc9;
   color: white;
 }
 

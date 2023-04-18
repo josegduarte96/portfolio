@@ -3,9 +3,9 @@
     <Navbar @scroll="scrollTo" @nightMode="switchMode" :nightMode="nightMode" />
     <div class="parent">
       <Home :nightMode="nightMode" />
+      <Portfolio id="portfolio" :nightMode="nightMode" />
       <About id="about" :nightMode="nightMode" />
       <Skills id="skills" :nightMode="nightMode" />
-      <Portfolio id="portfolio" :nightMode="nightMode" />
       <Contact id="contact" :nightMode="nightMode" />
       <Footer :nightMode="nightMode" />
     </div>
@@ -13,15 +13,15 @@
 </template>
 
 <script>
-import Navbar from "./components/Navbar.vue";
-import Home from "./components/Home";
-import About from "./components/About";
-import Skills from "./components/Skills";
-import Portfolio from "./components/Portfolio";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+import Navbar from "./components/Navbar.vue"
+import Home from "./components/Home"
+import About from "./components/About"
+import Skills from "./components/Skills"
+import Portfolio from "./components/Portfolio"
+import Contact from "./components/Contact"
+import Footer from "./components/Footer"
 
-import info from "../info";
+import info from "../info"
 
 export default {
   name: "App",
@@ -38,43 +38,42 @@ export default {
     return {
       nightMode: false,
       config: info.config,
-    };
+    }
   },
   created() {
     if (this.config.use_cookies) {
-      this.nightMode = this.$cookie.get("nightMode") === "true" ? true : false;
+      this.nightMode = this.$cookie.get("nightMode") === "true" ? true : false
     }
   },
   mounted() {
-    ["about", "contact", "skills", "portfolio"].forEach((l) => {
+    ;["about", "contact", "skills", "portfolio"].forEach((l) => {
       if (window.location.href.includes(l)) {
-        var elementPosition = document.getElementById(l).offsetTop;
-        window.scrollTo({ top: elementPosition - 35, behavior: "smooth" });
+        var elementPosition = document.getElementById(l).offsetTop
+        window.scrollTo({ top: elementPosition - 35, behavior: "smooth" })
       }
-    });
+    })
   },
   methods: {
     switchMode(mode) {
       if (this.config.use_cookies) {
-        this.$cookie.set("nightMode", mode);
+        this.$cookie.set("nightMode", mode)
       }
-      this.nightMode = mode;
+      this.nightMode = mode
     },
     scrollTo(ele) {
       console.log(ele)
       if (ele == "home") {
-        this.$router.push(`/`).catch(()=>{});
-        window.scrollTo({ top: -80, behavior: "smooth" });
+        this.$router.push(`/`).catch(() => {})
+        window.scrollTo({ top: -80, behavior: "smooth" })
       } else {
-        var elementPosition = document.getElementById(ele).offsetTop;
+        var elementPosition = document.getElementById(ele).offsetTop
         console.log(document.getElementById(ele))
-        window.scrollTo({ top: elementPosition - 35, behavior: "smooth" });
-        if (this.$router.history.current.path !== `/${ele}`)
-          this.$router.push(`/${ele}`);
+        window.scrollTo({ top: elementPosition - 35, behavior: "smooth" })
+        if (this.$router.history.current.path !== `/${ele}`) this.$router.push(`/${ele}`)
       }
     },
   },
-};
+}
 </script>
 
 <style>
@@ -103,7 +102,7 @@ export default {
 }
 
 .pblue {
-  color: #759CC9;
+  color: #759cc9;
 }
 
 .bg-dark2 {
@@ -133,7 +132,7 @@ export default {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #AEAEAE;
+  background: #aeaeae;
   border-radius: 9px;
 }
 
@@ -148,7 +147,7 @@ export default {
 }
 
 .tooltip .tooltip-inner {
-  background: #64808E;
+  background: #64808e;
   color: white;
   border-radius: 8px;
   font-size: 10px;
@@ -161,7 +160,7 @@ export default {
   border-style: solid;
   position: absolute;
   margin: 5px;
-  border-color: #64808E;
+  border-color: #64808e;
   z-index: 1;
 }
 
