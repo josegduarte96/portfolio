@@ -8,22 +8,12 @@
     }"
   >
     <div class="container">
-      <div
-        class="text-center"
-        data-aos="fade"
-        data-aos-once="true"
-        data-aos-duration="1000"
-      >
-        <span
-          class="title text-center"
-          :class="{ pgray: !nightMode, 'text-light': nightMode }"
-          >Sobre mi.</span
+      <div class="text-center" data-aos="fade" data-aos-once="true" data-aos-duration="1000">
+        <span class="title text-center" :class="{ pgray: !nightMode, 'text-light': nightMode }"
+          >Sobre mí</span
         >
       </div>
-      <hr
-        width="50%"
-        :class="{ pgray: !nightMode, 'bg-secondary': nightMode }"
-      />
+      <hr width="50%" :class="{ pgray: !nightMode, 'bg-secondary': nightMode }" />
       <div class="row">
         <div class="col-xl-6 col-bg-6 col-md-6 col-sm-12">
           <Timeline :data="education" :nightMode="nightMode" />
@@ -37,8 +27,8 @@
 </template>
 
 <script>
-import Timeline from "./helpers/Timeline";
-import info from "../../info";
+import Timeline from "./helpers/Timeline"
+import info from "../../info"
 
 export default {
   name: "About",
@@ -53,16 +43,16 @@ export default {
   data() {
     return {
       education: {
-        title: "educacion",
+        title: "educación",
         data: info.education,
       },
       experience: {
         title: "experiencia",
         data: info.experience,
       },
-    };
+    }
   },
-};
+}
 </script>
 
 <style scoped>

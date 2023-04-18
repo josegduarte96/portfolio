@@ -8,22 +8,12 @@
     }"
   >
     <div class="container mt-5">
-      <div
-        class="text-center"
-        data-aos="fade"
-        data-aos-once="true"
-        data-aos-duration="1000"
-      >
-        <span
-          class="title text-center"
-          :class="{ pgray: !nightMode, 'text-light': nightMode }"
+      <div class="text-center" data-aos="fade" data-aos-once="true" data-aos-duration="1000">
+        <span class="title text-center" :class="{ pgray: !nightMode, 'text-light': nightMode }"
           >Portfolio.</span
         >
       </div>
-      <hr
-        width="50%"
-        :class="{ pgray: !nightMode, 'bg-secondary': nightMode }"
-      />
+      <hr width="50%" :class="{ pgray: !nightMode, 'bg-secondary': nightMode }" />
 
       <vue-tabs :activeTextColor="!nightMode ? '#535A5E' : '#dfdfdf'">
         <v-tab title="Repositorios">
@@ -68,12 +58,12 @@
 </template>
 
 <script>
-import Card from "./helpers/Card";
-import Modal from "./helpers/Modal";
-import info from "../../info";
-import { VueTabs, VTab } from "vue-nav-tabs";
-import "vue-nav-tabs/themes/vue-tabs.css";
-import "vueperslides/dist/vueperslides.css";
+import Card from "./helpers/Card"
+import Modal from "./helpers/Modal"
+import info from "../../info"
+import { VueTabs, VTab } from "vue-nav-tabs"
+import "vue-nav-tabs/themes/vue-tabs.css"
+import "vueperslides/dist/vueperslides.css"
 
 export default {
   name: "Portfolio",
@@ -81,7 +71,7 @@ export default {
     Card,
     Modal,
     VueTabs,
-    VTab
+    VTab,
   },
   props: {
     nightMode: {
@@ -98,75 +88,74 @@ export default {
       modal_info: {},
       design_modal_info: {},
       number: 3,
-      showBtn: "show more",
+      showBtn: "Mostrar Más",
       shower: 0,
       data: [
         '<div class="example-slide">Slide 1</div>',
         '<div class="example-slide">Slide 2</div>',
         '<div class="example-slide">Slide 3</div>',
       ],
-    };
+    }
   },
   created() {
     for (var i = 0; i < this.number; i++) {
-      this.portfolio_info.push(this.all_info[i]);
+      this.portfolio_info.push(this.all_info[i])
     }
   },
   watch: {
     number() {
-      this.portfolio_info = [];
+      this.portfolio_info = []
       for (var i = 0; i < this.number; i++) {
-        this.portfolio_info.push(this.all_info[i]);
+        this.portfolio_info.push(this.all_info[i])
       }
     },
   },
   methods: {
     next() {
-      this.$refs.flickity.next();
+      this.$refs.flickity.next()
     },
 
     previous() {
-      this.$refs.flickity.previous();
+      this.$refs.flickity.previous()
     },
     closeModal() {
-      this.showModal = false;
-      this.showDesignModal = false;
-      document.getElementsByTagName("body")[0].classList.remove("modal-open");
+      this.showModal = false
+      this.showDesignModal = false
+      document.getElementsByTagName("body")[0].classList.remove("modal-open")
     },
     showModalFn(portfolio) {
-      this.modal_info = portfolio;
-      this.showModal = true;
+      this.modal_info = portfolio
+      this.showModal = true
     },
     showDesignModalFn(design_portfolio) {
-      this.design_modal_info = design_portfolio;
-      this.showDesignModal = true;
+      this.design_modal_info = design_portfolio
+      this.showDesignModal = true
     },
     showMore() {
       if (this.number != this.all_info.length) {
-        this.number += 3;
+        this.number += 3
 
         window.scrollBy({
           top: document.getElementsByClassName("smcard")[0].clientHeight,
           behavior: "smooth",
-        });
+        })
 
-        if (this.number > this.all_info.length)
-          this.number = this.all_info.length;
+        if (this.number > this.all_info.length) this.number = this.all_info.length
       }
 
       if (this.number == this.all_info.length && this.shower == 0) {
-        this.shower = 1;
-        this.showBtn = "show less";
+        this.shower = 1
+        this.showBtn = "show less"
       } else if (this.number == this.all_info.length && this.shower == 1) {
-        var elementPosition = document.getElementById("portfolio").offsetTop;
-        window.scrollTo({ top: elementPosition + 5, behavior: "smooth" });
-        this.shower = 0;
-        this.number = 3;
-        this.showBtn = "show more";
+        var elementPosition = document.getElementById("portfolio").offsetTop
+        window.scrollTo({ top: elementPosition + 5, behavior: "smooth" })
+        this.shower = 0
+        this.number = 3
+        this.showBtn = "Mostrar más"
       }
     },
   },
-};
+}
 </script>
 
 <style scoped>
@@ -311,19 +300,19 @@ export default {
 }
 
 .btn {
-  border-color: #759CC9;
-  color: #759CC9;
+  border-color: #759cc9;
+  color: #759cc9;
 }
 
 .btn:hover {
-  background-color: #759CC9;
-  border-color: #759CC9;
+  background-color: #759cc9;
+  border-color: #759cc9;
   color: white;
 }
 
 .btn:focus {
-  background-color: #759CC9;
-  border-color: #759CC9;
+  background-color: #759cc9;
+  border-color: #759cc9;
   color: white;
 }
 /deep/ .vueperslides__arrow {
@@ -346,6 +335,6 @@ export default {
 .date {
   font-size: 14px;
   font-weight: 400;
-  opacity: 0.75
+  opacity: 0.75;
 }
 </style>
