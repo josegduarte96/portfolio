@@ -10,11 +10,11 @@ let info = {
     },
   },
   description:
-    "Frontend Developer y soporte IT en Microsoft. Con lógica y paciencia podemos hacer grandes cosas &#128517",
+    "Frontend Developer. Con lógica y paciencia podemos hacer grandes cosas &#128517",
   links: {
     linkedin: "https://www.linkedin.com/in/josegduarte96/",
     github: "https://github.com/josegduarte96",
-    resume: "https://drive.google.com/file/d/1DkIYx31POkRmRk8Kfe5_tbVPjAKVyqUj/view?usp=sharing",
+    resume: "https://drive.google.com/file/d/1rG2UefkXlrfcYRYfMNKRRedHfOgRA3Lv/view?usp=sharing",
   },
   education: [
     {
@@ -27,6 +27,14 @@ let info = {
     },
   ],
   experience: [
+    {
+      name: "Global66",
+      place: "Argentina",
+      date: "NOV, 2023 - actualidad",
+      position: "Desarrollador frontend",
+      description: "",
+      skills: ["Javascript", "TypeScript", "VueJs", "NativeScript", "Sass", "Vuex", "Axios"],
+    },
     {
       name: "All Seasons S.R.L",
       place: "Argentina",
@@ -67,13 +75,13 @@ let info = {
       icon: "fa fa-code",
     },
     {
-      title: "Front-end",
-      info: ["HTML5", "CSS3", "Bootstrap5", "Tailwind", "Sass", "Es6", "json"],
+      title: "Frontend",
+      info: ["HTML5", "CSS3", "Bootstrap5", "Tailwind", "Sass", "Es6", "TanStack Query", "Vitest", "json"],
       icon: "fa fa-cubes",
     },
     {
       title: "Frameworks",
-      info: ["Vue", "React", "SpringBoot", "Quasar", "Vuetify"],
+      info: ["Vue", "React", "SpringBoot", "Quasar", "Vuetify", "Nuxt"],
       icon: "fas fa-laptop-code",
     },
     {
@@ -171,40 +179,28 @@ let info = {
         " Daybook App especie de un diario personal, sirve para guardar notas a la fecha con alguna imagen para recordar cosas ",
     },
     {
-      name: "The Movies",
+      name: "VeriStream",
       pictures: [
         {
-          img: require("./src/assets/portfolio/the-movies/home.png"),
-        },
-        {
-          img: require("./src/assets/portfolio/the-movies/register.png"),
-        },
-        {
-          img: require("./src/assets/portfolio/the-movies/login.png"),
-        },
-        {
-          img: require("./src/assets/portfolio/the-movies/modal.png"),
-        },
-        {
-          img: require("./src/assets/portfolio/the-movies/movies.png"),
-        },
+          img: require("./src/assets/portfolio/the-movies/Diseño sin título.png"),
+        }
       ],
       technologies: [
         "vue",
-        "vuex",
-        "local storage",
+        "Pinia",
+        "Firebase",
         "auth",
-        "xepelin-api",
+        "Nuxt",
         "vue-router",
-        "TMDB Api",
-        "quasar",
+        "OMDB Api",
+        "NuxtUI",
       ],
       category: "Web App",
       date: "Feb, 2022",
-      github: "https://github.com/josegduarte96/the-movies-quasar",
-      visit: "https://the-movies-quasar.netlify.app/#/",
+      github: "https://github.com/josegduarte96/veriStream",
+      visit: "https://veristream.netlify.app/",
       description:
-        " The movies App es una plataforma para mirar un listado de algunas peliculas del momento, las mas valoradas y las que estan por estrenarse. Permite guardas tus peliculas favoritas ",
+        "VeriStream es una plataforma para mirar un listado de algunas peliculas del momento, las mas valoradas y las que estan por estrenarse.",
     },
     {
       name: "Todo List",
